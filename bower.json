@@ -1,0 +1,38 @@
+{
+    "name": "Mba.ux.Data",
+    "version": "0.0.1",
+    "homepage": "https://github.com/bluebile/Mba.ux.Data",
+    "authors": [
+        "Bluebile <info@bluebile.com>"
+    ],
+    "description": "Melhorias na model e na store do Sencha Touch",
+    "main": [
+        "Model.js",
+        "Store.js"
+    ],
+    "keywords": [
+        "senchatouch",
+        "extjs",
+        "ux",
+        "model",
+        "data",
+        "store"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "demo",
+        "ux",
+        "**/*.*~",
+        "Gruntfile.js",
+        "bower.json",
+        "package.json",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "Mba.ux.Validator": "v0.0.1"
+    }
+}
