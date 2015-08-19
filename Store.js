@@ -1,10 +1,9 @@
 Ext.define('Mba.ux.Data.Store', {
-    override : 'Ext.data.Store',
-
+    override: 'Ext.data.Store',
 
     applyProxy: function(proxy, currentProxy) {
-        if(Ext.isObject(proxy)) {
-            if(!proxy.model) {
+        if (Ext.isObject(proxy)) {
+            if (!proxy.model) {
                 proxy.model = this.getModel().$className;
             }
         }
