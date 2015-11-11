@@ -47,5 +47,23 @@ Ext.define('Mba.ux.Data.Model', {
         }
 
         return errors;
+    },
+
+    buildRestUrl: function(request) {
+
+        // exemplo de utilização do método (fazer override em cada model específica):
+
+        //var params = request.getParams();
+        //var action = request.getAction();
+        //if (action == 'create') {
+        //    request.setUrl(request.getUrl() + '/create');
+        //} else if (action == 'read') {
+        //    if (Ext.Object.getSize(params) === 0 && !request.getUrl().match(/\/\d.*/)) {
+        //        request.setUrl(request.getUrl() + '/all');
+        //    }
+        //}
+
+        return request.getUrl();
     }
+
 });
