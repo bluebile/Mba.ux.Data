@@ -33,6 +33,7 @@
         "tests"
     ],
     "dependencies": {
-        "Mba.ux.Validator": "v0.0.2"
+        "Mba.ux.Validator": "v0.0.2",
+        "Ext.ux.Deferred": "v1.0.2"
     }
 }
