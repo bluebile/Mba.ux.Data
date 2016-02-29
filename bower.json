@@ -34,6 +34,6 @@
     ],
     "dependencies": {
         "Mba.ux.Validator": "v0.0.2",
-        "Ext.ux.Deferred": "https://github.com/wilk/Ext.ux.Deferred.git#v1.0.0"
+        "ext.ux.deferred": "1.0.0"
     }
 }
