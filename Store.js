@@ -30,6 +30,7 @@ Ext.define('Mba.ux.Data.Store', {
      *  @return {Object} return.dfd: A instancia do deferred com a promessa
      *  @return {Object} return.options: Objeto options alterado para ser passado para callParent
      *  @return {Object} return.scope: Escopo de chamada, o mesmo scope passado para a funcao
+     *  @private
      **/
     prepareDeferred: function(options, scope) {
         var dfd = Ext.create('Ext.ux.Deferred'),
@@ -59,35 +60,39 @@ Ext.define('Mba.ux.Data.Store', {
      *  de uma store normal
      *  @returns {Object} Uma promessa de load */
     load: function(options, scope) {
-        var r = this.prepareDeferred(options, scope);
+        var r = this.prepareDeferred(options, scope),
+            promise = r.dfd.promise();
         this.callParent([r.options, r.scope]);
-        return r.dfd.promise();
+        return promise;
     },
 
     /** Executa uma funcao de loadPage deffered. Os parametros sao os mesmos
      *  de uma store normal
      *  @returns {Object} Uma promessa de loadPage */
     loadPage: function(page, options, scope) {
-        var r = this.prepareDeferred(options, scope);
+        var r = this.prepareDeferred(options, scope),
+            promise = r.dfd.promise();
         this.callParent([page, r.options, r.scope]);
-        return r.dfd.promise();
+        return promise;
     },
 
     /** Executa uma funcao de nextPage deffered. Os parametros sao os mesmos
      *  de uma store normal
      *  @returns {Object} Uma promessa de nextPage */
     nextPage: function(options) {
-        var r = this.prepareDeferred(options);
+        var r = this.prepareDeferred(options),
+            promise = r.dfd.promise();
         this.callParent([r.options]);
-        return r.dfd.promise();
+        return promise;
     },
 
     /** Executa uma funcao de previousPage deffered. Os parametros sao os mesmos
      *  de uma store normal
      *  @returns {Object} Uma promessa de previousPage */
     previousPage: function(options) {
-        var r = this.prepareDeferred(options);
+        var r = this.prepareDeferred(options),
+            promise = r.dfd.promise();
         this.callParent([r.options]);
-        return r.dfd.promise();
+        return promise;
     }
 });
