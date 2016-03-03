@@ -1,6 +1,6 @@
 {
     "name": "Mba.ux.Data",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "homepage": "https://github.com/bluebile/Mba.ux.Data",
     "authors": [
         "Bluebile <info@bluebile.com>"
@@ -35,5 +35,6 @@
     "dependencies": {
         "Mba.ux.Validator": "v0.0.2",
         "Ext.ux.Deferred": "1.0.0"
-    }
+    },
+    "requires": "Mba.ux.Data.*"
 }
