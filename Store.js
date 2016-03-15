@@ -36,13 +36,13 @@ Ext.define('Mba.ux.Data.Store', {
         var dfd = Ext.create('Ext.ux.Deferred'),
             userCallback = Ext.emptyFn;
 
+        options = options || { };
+
         if (Ext.isFunction(options)) {
             userCallback = options;
         } else if (Ext.isObject(options)) {
             userCallback = options.callback || Ext.emptyFn;
         }
-
-        options = { scope: scope };
 
         options.callback = function() {
             userCallback.apply(dfd, arguments);
