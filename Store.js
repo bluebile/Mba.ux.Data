@@ -39,7 +39,7 @@ Ext.define('Mba.ux.Data.Store', {
         if (Ext.isFunction(options)) {
             userCallback = options;
         } else if (Ext.isObject(options)) {
-            userCallback = options.callback;
+            userCallback = options.callback || Ext.emptyFn;
         }
 
         options = { scope: scope };
