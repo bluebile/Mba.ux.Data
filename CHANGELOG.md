@@ -1,6 +1,10 @@
 CHANGELOG
 ===================
 
+* v0.0.9 (2016-03-28)
+
+ * bug fix #6 [Correção dependencia Ext.ux.Deferred ]
+
 * v0.0.8 (2016-03-15)
 
  * bug fix pull #4 [Impedindo que callback undefined seja chamado]
