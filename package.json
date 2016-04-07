@@ -1,6 +1,6 @@
 {
     "name": "Mba.ux.Data",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "dependencies": {
         "gulp": "^3.8.8",
         "gulp-jshint": "https://github.com/bluebile/gulp-jshint.git",
@@ -10,3 +10,4 @@
         "minimist": "1.1.3"
     }
 }
+                                                                                                                                     rb
