@@ -34,7 +34,9 @@ Ext.define('Mba.ux.Data.Store', {
      **/
     prepareDeferred: function(options, scope) {
         var dfd = Ext.create('Ext.ux.Deferred'),
-            userCallback = Ext.emptyFn;
+            userCallback = Ext.emptyFn,
+            me = this,
+            argumentsPromise;
 
         options = options || {};
 
@@ -46,8 +48,10 @@ Ext.define('Mba.ux.Data.Store', {
         }
 
         options.callback = function() {
-            userCallback.apply(dfd, arguments);
-            dfd.resolve.apply(dfd, arguments);
+            userCallback.apply(me, arguments);
+            argumentsPromise = Ext.Array.slice(arguments);
+            argumentsPromise.push(me);
+            dfd.resolve.apply(dfd, argumentsPromise);
         };
 
         return {

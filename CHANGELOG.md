@@ -1,6 +1,11 @@
 CHANGELOG
 ===================
 
+* v0.0.11 (2016-04-16)
+
+ * bug fix [Corrigir escopo] #8
+ * bug fix [Mba.ux.Data.Store deve encaminhar a store com arg] #9
+
 * v0.0.10 (2016-04-07)
 
  * bug fix [Callback para execução da Promise]
