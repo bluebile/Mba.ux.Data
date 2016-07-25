@@ -51,7 +51,11 @@ Ext.define('Mba.ux.Data.Store', {
             userCallback.apply(me, arguments);
             argumentsPromise = Ext.Array.slice(arguments);
             argumentsPromise.push(me);
-            dfd.resolve.apply(dfd, argumentsPromise);
+            if (arguments[2]) {
+                dfd.resolve.apply(dfd, argumentsPromise);
+                return;
+            }
+            dfd.reject.apply(dfd, argumentsPromise);
         };
 
         return {

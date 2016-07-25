@@ -15,6 +15,16 @@ Ext.define('Mba.ux.Data.Model', {
         return Ext.factory(proxy, Ext.data.Proxy, currentProxy, 'proxy');
     },
 
+    get: function(fieldName) {
+        if (this.fields.map[fieldName].getType().type === 'int') {
+            return parseInt(this.callParent(arguments));
+        }
+        if (this.fields.map[fieldName].getType().type === 'float') {
+            return parseFloat(this.callParent(arguments));
+        }
+        return this.callParent(arguments);
+    },
+
     getIdProperty: function(idProperty) {
         if (Ext.isObject(this.config.idProperty)) {
             return this.config.idProperty.mapping;
