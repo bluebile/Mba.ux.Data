@@ -16,10 +16,10 @@ Ext.define('Mba.ux.Data.Model', {
     },
 
     get: function(fieldName) {
-        if (this.fields.map[fieldName].getType().type === 'int') {
+        if (this.fields.map[fieldName] && this.fields.map[fieldName].getType().type === 'int') {
             return parseInt(this.callParent(arguments));
         }
-        if (this.fields.map[fieldName].getType().type === 'float') {
+        if (this.fields.map[fieldName] && this.fields.map[fieldName].getType().type === 'float') {
             return parseFloat(this.callParent(arguments));
         }
         return this.callParent(arguments);
