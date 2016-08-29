@@ -1,6 +1,6 @@
 {
     "name": "Mba.ux.Data",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "homepage": "https://github.com/bluebile/Mba.ux.Data",
     "authors": [
         "Bluebile <info@bluebile.com>"
@@ -34,7 +34,7 @@
     ],
     "dependencies": {
         "Mba.ux.Validator": "v0.0.2",
-        "Ext.ux.Deferred": "https://github.com/wilk/Ext.ux.Deferred.git#v1.0.0"
+        "Ext.ux.Deferred": "https://github.com/wilk/Ext.ux.Deferred.git#v1.0.3"
     },
     "requires": "Mba.ux.Data.*"
 }
