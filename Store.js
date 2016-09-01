@@ -1,6 +1,10 @@
 Ext.define('Mba.ux.Data.Store', {
     override: 'Ext.data.Store',
-    requires: ['Ext.ux.Deferred'],
+
+    requires: [
+        'Ext.ux.Deferred',
+        'Ext.device.Connection'
+    ],
 
     applyProxy: function(proxy, currentProxy) {
         if (Ext.isObject(proxy)) {
@@ -70,7 +74,19 @@ Ext.define('Mba.ux.Data.Store', {
      *  @returns {Object} Uma promessa de load */
     load: function(options, scope) {
         var r = this.prepareDeferred(options, scope),
-            promise = r.dfd.promise();
+            promise = r.dfd.promise(), remoteProxys = ['Mba.ux.Data.MbaRestProxy', 'Ext.data.proxy.Ajax',
+            'Ext.data.proxy.Rest'];
+        if (this.getProxy() && remoteProxys.indexOf(this.getProxy().$className) !== -1) {
+            if (!Ext.device.Connection.isOnline()) {
+                r.dfd.reject([], {
+                    error: {
+                        statusText: 'Sem conexão de dados.'
+                    }
+                });
+                return promise;
+            }
+        }
+
         this.callParent([r.options, r.scope]);
         return promise;
     },
