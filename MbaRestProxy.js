@@ -17,7 +17,13 @@ Ext.define('Mba.ux.Data.MbaRestProxy', {
                 delete params[property];
             }
         }
-
+        
+        timeDc = new Date().getTime();
+        if(url.indexOf('?') != -1) {
+            url += '&_dc=' + timeDc;
+        } else {
+            url += '?_dc=' + timeDc;
+        }
         request.setUrl(url);
 
         return this.getModel().prototype.buildRestUrl(request);

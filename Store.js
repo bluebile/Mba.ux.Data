@@ -60,7 +60,9 @@ Ext.define('Mba.ux.Data.Store', {
                 return;
             }
             if (argumentsPromise[1].erro && (argumentsPromise[1].error.status === 0 || argumentsPromise[1].error.status === 404)) {
-                Ext.Msg.alert('Atenção', MbaLocale.get('MSG_ERRO_TIMEOUT'));
+                if (argumentsPromise[1].error.status === 0) {
+                    Ext.Msg.alert('Atenção', MbaLocale.get('MSG_ERRO_TIMEOUT'));
+                }
                 this.removeAll();
                 dfd.resolve.apply(dfd, argumentsPromise);
                 return;
